@@ -21,6 +21,7 @@ end
 
 group :development do
   gem "guard-rspec"
+  gem "guard-livereload"
 end
 
 group :development, :test do
