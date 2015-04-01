@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password:
+
+development:
+  <<: *default
+  database: Exchange_development
+
+test:
+  <<: *default
+  database: Exchange_test
+
+production:
+  <<: *default
+  database: Exchange_production
+  username: Exchange
+  password: <%= ENV['EXCHANGE_DATABASE_PASSWORD'] %>
