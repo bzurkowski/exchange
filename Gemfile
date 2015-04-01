@@ -19,6 +19,10 @@ group :doc do
   gem "sdoc", "~> 0.4.0", require: false
 end
 
+group :development do
+  gem "guard-rspec"
+end
+
 group :development, :test do
   gem "rspec-rails"
   gem "byebug"
