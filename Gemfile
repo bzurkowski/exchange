@@ -32,6 +32,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "launchy"
   gem "poltergeist", require: false
   gem "database_cleaner"
   gem "timecop"
