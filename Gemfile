@@ -13,11 +13,21 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 
 group :doc do
-  gem "sdoc", "~> 0.4.0"
+  gem "sdoc", "~> 0.4.0", require: false
 end
 
 group :development, :test do
+  gem "rspec-rails"
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
+end
+
+group :test do
+  gem "capybara"
+  gem "poltergeist", require: false
+  gem "database_cleaner"
+  gem "timecop"
+  gem "shoulda-matchers"
+  gem "fabrication"
 end
