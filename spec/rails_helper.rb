@@ -21,6 +21,8 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.use_transactional_examples = false
 
+  config.include Devise::TestHelpers, type: [:controller, :feature]
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end

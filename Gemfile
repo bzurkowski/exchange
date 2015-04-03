@@ -17,6 +17,7 @@ gem "font-awesome-sass"
 gem "bourbon"
 
 gem "mailgunner"
+gem "devise"
 
 group :doc do
   gem "sdoc", "~> 0.4.0", require: false
