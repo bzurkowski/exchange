@@ -45,4 +45,5 @@ group :test do
   gem "timecop"
   gem "shoulda-matchers"
   gem "fabrication"
+  gem "faker"
 end

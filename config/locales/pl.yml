@@ -17,3 +17,52 @@ pl:
       system_care: "Nasz system zadba o Twój plan zajęć"
       content_header: "Lorem ipsum dolor sit amet"
       content: "Nulla rutrum imperdiet nulla at imperdiet. Quisque bibendum sollicitudin lorem, ac rutrum neque laoreet eu. Curabitur ante urna, euismod sed velit facilisis, vestibulum semper ligula. Fusce varius nisi vel mi dignissim blandit. Nullam ornare diam massa, at ullamcorper velit dictum vitae. Quisque euismod mauris eu laoreet laoreet. Suspendisse varius mauris non rutrum pretium. Donec posuere urna vel ante congue porttitor. Praesent ultricies diam sed diam lobortis fermentum."
+  activerecord:
+    errors:
+      messages:
+        record_invalid: jest nieprawidłowe
+      numericality: &numericality_errors
+        not_a_number: nie jest liczbą
+        less_than: musi być mniejszy niż %{count}
+        less_than_or_equal_to: musi być mniejszy lub równy %{count}
+        greater_than: musi być większy niż %{count}
+        greater_than_or_equal_to: musi być większy lub równy %{count}
+      general_masculine: &general_errors_m
+        blank: nie może być pusty
+        taken: jest już zajęty
+        invalid: jest niepoprawny
+      general_feminine: &general_errors_f
+        blank: nie może być pusta
+        taken: jest już zajęta
+        invalid: jest niepoprawna
+      general_neuter: &general_errors_n
+        blank: nie może być puste
+        taken: jest już zajęte
+        invalid: jest niepoprawne
+      models:
+        user:
+          attributes:
+            username:
+              <<: *general_errors_m
+            email:
+              <<: *general_errors_m
+            student_number:
+              <<: *numericality_errors
+              <<: *general_errors_m
+              format_message: musi być sześciocyfrową liczbą
+            password:
+              <<: *general_errors_n
+    models:
+      user:
+        one: Użytkownik
+        other: Użytkownicy
+    attributes:
+      user:
+        username: Login
+        email: Email
+        password: Hasło
+        password_confirmation: Powtórz hasło
+        current_password: Aktualne hasło
+        student_number: Numer albumu
+        remember_me: Zapamiętaj hasło
+        confirmation_token: Token potwierdzenia
