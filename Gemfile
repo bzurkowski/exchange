@@ -15,6 +15,8 @@ gem "haml"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
 
+gem "mailgunner"
+
 group :doc do
   gem "sdoc", "~> 0.4.0", require: false
 end
@@ -22,6 +24,7 @@ end
 group :development do
   gem "guard-rspec"
   gem "guard-livereload"
+  gem "letter_opener"
 end
 
 group :development, :test do
