@@ -14,6 +14,7 @@ gem "jbuilder", "~> 2.0"
 gem "haml"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
+gem "bourbon"
 
 gem "mailgunner"
 
