@@ -11,6 +11,7 @@
 %body
   = render "layouts/header"
 
-  = yield
+  %div{ class: container_class(yield :container) }
+    = yield
 
   = render "layouts/footer"
