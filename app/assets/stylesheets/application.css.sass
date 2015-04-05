@@ -42,6 +42,10 @@ small
 ul
   list-style: none
 
+.markout
+  margin: 50px 0px 50px 0px
+  text-align: center
+
 a.navbar-brand
   font-size: 24px
   font-weight: bold
@@ -53,6 +57,27 @@ a.navbar-brand
   &:hover
     border: 1px solid #5B77C5
     background: #5B77C5
+
+.jumbotron.homepage
+  @include linear-gradient(to bottom, #504e66, #8098dc)
+  color: #fff
+  margin: 0px
+
+  .btn
+    background: none
+    border: 1px solid #fff
+    color: #fff
+
+.exchange-steps
+  margin: 50px 0px
+
+  li
+    display: inline-block
+    text-align: center
+
+    span
+      font-size: 100px
+      color: #ddd
 
 footer
   background: #fafafa
