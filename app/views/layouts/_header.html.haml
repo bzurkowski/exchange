@@ -1,0 +1,21 @@
+%nav#navbar{class: "navbar navbar-default navbar-fixed-top"}
+  .container
+    #navbar-header{class: "navbar-header"}
+      %button{class: "navbar-toggle collapsed", data: {toggle: "collapse", target: "#navbar-links"}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to "#", class: "navbar-brand" do
+        %span.fa.fa-refresh
+        Exchange
+
+    #navbar-links{class: "collapse navbar-collapse"}
+      %ul.nav.navbar-nav
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          .navbar-btn
+            = link_to "Log in", "#", class: "btn btn-default"
+            = link_to "Sign up", "#", class: "btn btn-primary"
