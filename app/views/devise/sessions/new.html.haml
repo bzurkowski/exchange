@@ -1,0 +1,13 @@
+%h2= t(".header")
+
+= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  .form-group
+    .col-sm-offset-2.col-sm-8
+      = f.button :submit, t(".log_in")
+      = link_to t(".forgot"), new_user_password_path, class: "small"
+
+.links
+  %p= link_to t(".resend"), new_user_confirmation_path

@@ -1,0 +1,9 @@
+%h2= t(".header")
+
+= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |f|
+  = f.input :reset_password_token, as: :hidden
+  = f.input :password
+  = f.input :password_confirmation
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, t(".submit")

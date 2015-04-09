@@ -13,9 +13,9 @@ pl:
         email: Email
     placeholders:
       user:
-        login: john350
+        username: john350
         email: john@example.com
-        matricula_number: "123456"
+        student_number: "123456"
 
     # hints:
     #   defaults:

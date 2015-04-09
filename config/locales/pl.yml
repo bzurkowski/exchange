@@ -1,8 +1,11 @@
 pl:
+  common:
+    confirm: Czy jesteś pewien?
   layout:
     header:
       sign_in: "Zaloguj się"
       sign_up: "Rejestracja"
+      sign_out: "Wyloguj"
     footer:
       contact_us: "Kontakt"
   home:
@@ -31,14 +34,17 @@ pl:
         blank: nie może być pusty
         taken: jest już zajęty
         invalid: jest niepoprawny
+        too_short: jest zbyt krótki
       general_feminine: &general_errors_f
         blank: nie może być pusta
         taken: jest już zajęta
         invalid: jest niepoprawna
+        too_short: jest zbyt krótka
       general_neuter: &general_errors_n
         blank: nie może być puste
         taken: jest już zajęte
         invalid: jest niepoprawne
+        too_short: jest zbyt krótkie
       models:
         user:
           attributes:
@@ -52,6 +58,12 @@ pl:
               format_message: musi być sześciocyfrową liczbą
             password:
               <<: *general_errors_n
+            current_password:
+              <<: *general_errors_n
+            password_confirmation:
+              confirmation: jest niepoprawne
+            confirmation_token:
+              <<: *general_errors_m
     models:
       user:
         one: Użytkownik

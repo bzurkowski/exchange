@@ -3,9 +3,12 @@
 pl:
   devise:
     confirmations:
-      confirmed: "Twoje konto zostało aktywowane. Zostałeś pomyślnie zalogowany."
+      confirmed: "Twoje konto zostało aktywowane."
       send_instructions: "Za chwilę otrzymasz email z instrukcją jak aktywować konto."
       send_paranoid_instructions: "Jeśli Twój adres email istnieje w naszej bazie, za chwilę powinieneś otrzymać instrukcję jak aktywować konto."
+      new:
+        header: "Prześlij ponownie mail aktywacyjny"
+        submit: "Prześlij mail aktywacyjny"
     failure:
       already_authenticated: "Jesteś aktualnie zalogowany."
       inactive: "Twoje konto nie zostało jeszcze aktywowane."
@@ -19,8 +22,16 @@ pl:
     mailer:
       confirmation_instructions:
         subject: "Instrukcja aktywacji konta"
+        welcome: "Witaj %{email}!"
+        confirm_text: "Możesz potwierdzić swój adres email używając poniższego linku:"
+        confirm_label: "Aktywuj konto"
       reset_password_instructions:
         subject: "Instrukcja zresetowania hasła."
+        welcome: "Witaj %{email}!"
+        change_requested: "Ktoś zarządał zmiany hasła do konta przypisanego do tego adresu email. Możesz zrobić to korzystając z poniższego linku."
+        change_label: "Zmień moje hasło"
+        warning1: "Jeśli to nie Ty prosiłeś o zmianę hasła, zignoruj tę wiadomość."
+        warning2: "Twoje hasło nie zmieni się dopóki nie klikniesz na powyższy link i nie wpiszesz nowego."
       unlock_instructions:
         subject: "Instrukcja odblokowania konta"
     omniauth_callbacks:
@@ -33,17 +44,41 @@ pl:
       updated: "Twoje hasło zostało zmienione. Zostałeś pomyślnie zalogowany."
       updated_not_active: "Twoje hasło zostało zmienione."
     registrations:
+      new:
+        header: "Zarejestruj się"
+        sign_up: "Zarejestruj"
+        at_least_characters: "Co najmniej %{minimum} znaków"
+      edit:
+        header: "Edycja konta"
+        pending_confirmation: "Oczekiwanie na potwierdzenie adresu %{email}"
+        blank_password_message: "Pozostaw puste, jeśli nie chcesz zmienić"
+        current_password_message: "Wpisz aktualne hasło by potwierdzić zmiany"
+        submit: "Zapisz"
+        cancel_account: "Usuń moje konto"
+        at_least_characters: "Co najmniej %{minimum} znaków"
       destroyed: "Do widzenia! Twoje konto zostało usunięte."
       signed_up: "Witaj! Zarejestrowałeś się pomyślnie."
       signed_up_but_inactive: "Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto nie zostało jeszcze aktywowane."
       signed_up_but_locked: "Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto zostało zablokowane."
-      signed_up_but_unconfirmed: "Wiadomość email z instrukcją aktywacji konta została przesłana na Twój adres email. Użj linku z emaila aby aktywować konto."
+      signed_up_but_unconfirmed: "Wiadomość email z instrukcją aktywacji konta została przesłana na Twój adres email. Użyj linku z emaila aby aktywować konto."
       update_needs_confirmation: "Konto zostało zaktualizowane. Niemniej jednak przed wprowadzeniem zmian musimy potwierdzić Twój nowy adres email. Za chwilę wyślemy instrukcję na nowy adres."
       updated: "Konto zostało pomyślnie zaktualizowane."
     sessions:
+      new:
+        header: "Zaloguj się"
+        log_in: "Zaloguj"
+        forgot: "Przypomnij hasło"
+        resend: "Prześlij ponownie mail aktywacyjny"
       user:
         signed_in: "Zostałeś zalogowany."
         signed_out: "Zostałeś wylogowany."
+    passwords:
+      new:
+        header: "Zresetuj hasło"
+        submit: "Zresetuj"
+      edit:
+        header: "Zmień hasło"
+        submit: "Zapisz"
     unlocks:
       send_instructions: "Za chwilę otrzymasz wiadomość email z instrukcją jak odblokować konto."
       send_paranoid_instructions: "Jeżeli Twoje konto istnieje, otrzymasz wiadomość emial z instrukcją jak odblokować konto."

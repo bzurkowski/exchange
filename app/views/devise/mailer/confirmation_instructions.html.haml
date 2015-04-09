@@ -1,0 +1,5 @@
+%p= t(".welcome", email: @email)
+
+%p= t(".confirm_text")
+
+%p= link_to t(".confirm_label"), confirmation_url(@resource, confirmation_token: @token)

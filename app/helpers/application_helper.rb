@@ -7,5 +7,4 @@ module ApplicationHelper
       "container"
     end
   end
-
 end

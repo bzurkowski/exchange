@@ -1,0 +1,7 @@
+%h2= t(".header")
+
+= simple_form_for resource, as: resource_name, url: password_path(resource_name) do |f|
+  = f.input :email
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, t(".submit")

@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
 
-      = link_to "#", class: "navbar-brand" do
+      = link_to root_path, class: "navbar-brand" do
         %span.fa.fa-refresh
         Exchange
 
@@ -17,5 +17,8 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           .navbar-btn
-            = link_to t("layout.header.sign_in"), "#", class: "btn btn-default"
-            = link_to t("layout.header.sign_up"), "#", class: "btn btn-primary"
+            - if current_user.present?
+              = link_to t("layout.header.sign_out"), destroy_user_session_path, method: :delete, class: "btn btn-default"
+            - else
+              = link_to t("layout.header.sign_in"), new_user_session_path, class: "btn btn-default"
+              = link_to t("layout.header.sign_up"), new_user_registration_path, class: "btn btn-primary"

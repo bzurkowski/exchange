@@ -1,0 +1,13 @@
+%h2= t(".header")
+
+= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+  = f.input :username
+  = f.input :email
+  = f.input :student_number
+  = f.input :password
+  = f.input :password_confirmation
+  .row.spacer
+  = f.input :current_password, tooltip: t(".current_password_message")
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, t(".submit")
