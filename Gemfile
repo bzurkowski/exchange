@@ -15,6 +15,7 @@ gem "haml"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "bourbon"
+gem "simple_form"
 
 gem "mailgunner"
 gem "devise"

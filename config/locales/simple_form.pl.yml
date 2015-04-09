@@ -1,0 +1,29 @@
+pl:
+  simple_form:
+    yes: Tak
+    no: Nie
+    required:
+      text: obowiązkowe
+      mark: '*'
+    error_notification:
+      default_message: "Wystąpiły następujące problemy:"
+    labels:
+      defaults:
+        password: Hasło
+        email: Email
+    placeholders:
+      user:
+        login: john350
+        email: john@example.com
+        matricula_number: "123456"
+
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
