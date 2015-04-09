@@ -11,10 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403161553) do
+ActiveRecord::Schema.define(version: 20150409204101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignations", force: :cascade do |t|
+    t.integer  "schedule_id"
+    t.integer  "term_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "assignations", ["schedule_id"], name: "index_assignations_on_schedule_id", using: :btree
+  add_index "assignations", ["term_id"], name: "index_assignations_on_term_id", using: :btree
+
+  create_table "instructors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.integer  "instructor_id"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "terms", ["instructor_id"], name: "index_terms_on_instructor_id", using: :btree
+  add_index "terms", ["starts_at", "subject_id", "instructor_id"], name: "index_terms_on_starts_at_and_subject_id_and_instructor_id", unique: true, using: :btree
+  add_index "terms", ["subject_id"], name: "index_terms_on_subject_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",                            null: false
