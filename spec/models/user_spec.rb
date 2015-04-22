@@ -1,11 +1,6 @@
 describe User do
-  subject do
-    Fabricate.build :user,
-      username: "Fan",
-      email: "fan@example.com",
-      student_number: 258560,
-      password: "yay-safe"
-  end
+  let(:user) { Fabricate.build :user }
+  subject { user }
 
   describe "validations" do
     let(:valid_emails) { %w(michalb@tests.com michal.b@tests.extensive.com) }
@@ -34,5 +29,27 @@ describe User do
 
   describe "associations" do
     it { should have_many :schedules }
+    it { should have_many(:user_roles) }
+    it { should have_many(:roles).through(:user_roles) }
+  end
+
+  describe "#admin?" do
+    subject { user.admin? }
+
+    before do
+      allow(user).to receive(:roles).and_return roles
+    end
+
+    context "when user is admin" do
+      let(:roles) { [double(name: "Admin"), double(name: "Foreman")] }
+
+      it { should be_truthy }
+    end
+
+    context "when user is not admin" do
+      let(:roles) { [double(name: "Foreman")] }
+
+      it { should be_falsey }
+    end
   end
 end

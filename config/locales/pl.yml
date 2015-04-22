@@ -64,10 +64,17 @@ pl:
               confirmation: jest niepoprawne
             confirmation_token:
               <<: *general_errors_m
+        role:
+          attributes:
+            name:
+              <<: *general_errors_f
     models:
       user:
         one: Użytkownik
         other: Użytkownicy
+      role:
+        one: Rola
+        other: Role
     attributes:
       user:
         username: Login
@@ -78,3 +85,5 @@ pl:
         student_number: Numer albumu
         remember_me: Zapamiętaj hasło
         confirmation_token: Token potwierdzenia
+      role:
+        name: Nazwa

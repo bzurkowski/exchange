@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 20150423212250) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,6 +64,14 @@ ActiveRecord::Schema.define(version: 20150423212250) do
   add_index "terms", ["starts_at", "subject_id", "instructor_id"], name: "index_terms_on_starts_at_and_subject_id_and_instructor_id", unique: true, using: :btree
   add_index "terms", ["subject_id"], name: "index_terms_on_subject_id", using: :btree
 
+  create_table "user_roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username",                            null: false
     t.string   "student_number"
@@ -82,4 +94,5 @@ ActiveRecord::Schema.define(version: 20150423212250) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "schedules", "users"
+  add_foreign_key "user_roles", "users"
 end
