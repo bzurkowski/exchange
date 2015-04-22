@@ -1,0 +1,7 @@
+#toasts-container
+  - flash.each do |type, message|
+    %p{ class: "bg-#{type == "notice" ? "success" : "warning"}" }
+      = message
+
+:coffee
+  $("#toasts-container").delay(1000).animate { opacity: 0 }, 700
