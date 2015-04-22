@@ -78,6 +78,9 @@ pl:
       role:
         one: Rola
         other: Role
+      schedule:
+        one: Plan zajęć
+        other: Plany zajęć
     attributes:
       user:
         username: Login
@@ -88,5 +91,7 @@ pl:
         student_number: Numer albumu
         remember_me: Zapamiętaj hasło
         confirmation_token: Token potwierdzenia
+        roles: Role
+        schedules: Plany zajęć
       role:
         name: Nazwa
