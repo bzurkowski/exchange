@@ -16,6 +16,7 @@ gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "bourbon"
 gem "simple_form"
+gem "activeadmin", "~> 1.0.0.pre1"
 
 gem "mailgunner"
 gem "devise"

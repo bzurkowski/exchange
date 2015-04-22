@@ -1,4 +1,6 @@
 pl:
+  access_denied: Nie masz odpowiednich uprawnień
+  basic_view: Widok podstawowy
   common:
     confirm: Czy jesteś pewien?
   layout:
@@ -6,6 +8,7 @@ pl:
       sign_in: "Zaloguj się"
       sign_up: "Rejestracja"
       sign_out: "Wyloguj"
+      admin_panel: "Panel admina"
     footer:
       contact_us: "Kontakt"
   home:

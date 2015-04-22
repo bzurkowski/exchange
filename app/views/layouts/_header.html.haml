@@ -19,6 +19,8 @@
           .navbar-btn
             - if current_user.present?
               = link_to t("layout.header.sign_out"), destroy_user_session_path, method: :delete, class: "btn btn-default"
+              - if current_user.admin?
+                = link_to t("layout.header.admin_panel"), admin_root_path, class: "btn btn-primary", data: { no_turbolink: true }
             - else
               = link_to t("layout.header.sign_in"), new_user_session_path, class: "btn btn-default"
               = link_to t("layout.header.sign_up"), new_user_registration_path, class: "btn btn-primary"
