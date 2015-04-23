@@ -10,6 +10,8 @@ describe Term do
   end
 
   describe "validations" do
+    subject { Fabricate.build(:term) }
+
     it { should validate_presence_of :starts_at }
     it { should validate_presence_of :ends_at }
 
@@ -21,8 +23,7 @@ describe Term do
     it { should validate_uniqueness_of(:starts_at).scoped_to(:subject_id, :instructor_id) }
 
     it "validates date range correctness" do
-      subject { Fabricate.build(:term, starts_at: Time.now, ends_at: Time.now - 1.hour) }
-
+      subject.ends_at = subject.starts_at - 1.hour
       expect(subject).to_not be_valid
     end
   end

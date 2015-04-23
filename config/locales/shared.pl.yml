@@ -1,0 +1,13 @@
+pl:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
+  date:
+    day_names:
+      0: Niedziela
+      1: Poniedziałek
+      2: Wtorek
+      3: Środa
+      4: Czwartek
+      5: Piątek
+      6: Sobota

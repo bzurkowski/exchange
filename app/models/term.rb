@@ -6,7 +6,7 @@ class Term < ActiveRecord::Base
   belongs_to :instructor
 
   validates :subject, :instructor, :starts_at, :ends_at, presence: true
-  validates :starts_at,  date: { before: :ends_at }
+  validates :starts_at, date: { before: :ends_at }
   validates :starts_at, uniqueness: { scope: [:subject_id, :instructor_id] }
   validates :description, length: { maximum: 100 }
 end
