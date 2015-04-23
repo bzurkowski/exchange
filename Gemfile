@@ -15,6 +15,7 @@ gem "haml"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "bourbon"
+gem "jquery-datetimepicker-rails"
 gem "simple_form"
 gem "activeadmin", "~> 1.0.0.pre1"
 
@@ -22,6 +23,7 @@ gem "mailgunner"
 gem "devise"
 
 gem "draper"
+
 
 group :doc do
   gem "sdoc", "~> 0.4.0", require: false

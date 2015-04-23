@@ -9,4 +9,8 @@ class Term < ActiveRecord::Base
   validates :starts_at, date: { before: :ends_at }
   validates :starts_at, uniqueness: { scope: [:subject_id, :instructor_id] }
   validates :description, length: { maximum: 100 }
+
+  def display_name
+    decorate.display_name
+  end
 end

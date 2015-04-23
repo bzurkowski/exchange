@@ -71,6 +71,10 @@ pl:
           attributes:
             name:
               <<: *general_errors_f
+        subject:
+          attributes:
+            name:
+              <<: *general_errors_f
     models:
       user:
         one: Użytkownik
@@ -81,8 +85,23 @@ pl:
       schedule:
         one: Plan zajęć
         other: Plany zajęć
+      subject:
+        one: Przedmiot
+        other: Przedmioty
+      instructor:
+        one: Prowadzący
+        other: Prowadzący
+      term:
+        one: Termin zajęć
+        other: Terminy zajęć
     attributes:
+      common_attributes: &common_attributes
+        id: ID
+        name: Nazwa
+        created_at: Data utworzenia
+        updated_at: Data aktualizacji
       user:
+        <<: *common_attributes
         username: Login
         email: Email
         password: Hasło
@@ -94,4 +113,20 @@ pl:
         roles: Role
         schedules: Plany zajęć
       role:
-        name: Nazwa
+        <<: *common_attributes
+      subject:
+        <<: *common_attributes
+        terms: Terminy zajęć
+      term:
+        <<: *common_attributes
+        instructor: Prowadzący
+        subject: Przedmiot
+        starts_at: Godzina rozpoczęcia
+        ends_at: Godzina zakończenia
+      instructor:
+        <<: *common_attributes
+        terms: Prowadzone zajęcia
+      schedule:
+        <<: *common_attributes
+        terms: Zajęcia
+        user: Właściciel
