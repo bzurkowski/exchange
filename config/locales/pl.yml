@@ -23,6 +23,9 @@ pl:
       system_care: "Nasz system zadba o Twój plan zajęć"
       content_header: "Lorem ipsum dolor sit amet"
       content: "Nulla rutrum imperdiet nulla at imperdiet. Quisque bibendum sollicitudin lorem, ac rutrum neque laoreet eu. Curabitur ante urna, euismod sed velit facilisis, vestibulum semper ligula. Fusce varius nisi vel mi dignissim blandit. Nullam ornare diam massa, at ullamcorper velit dictum vitae. Quisque euismod mauris eu laoreet laoreet. Suspendisse varius mauris non rutrum pretium. Donec posuere urna vel ante congue porttitor. Praesent ultricies diam sed diam lobortis fermentum."
+  schedules:
+    show:
+      your_schedule: "Twój plan zajęć"
   activerecord:
     errors:
       messages:

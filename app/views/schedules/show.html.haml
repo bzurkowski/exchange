@@ -1,0 +1,11 @@
+%h2= t(".your_schedule")
+
+.row
+  - (1..5).each do |day_num|
+    .col-md-2
+      %ul
+        - @schedule[day_num].each do |term|
+          %li
+            = link_to term do
+              %p= term.subject.name
+
