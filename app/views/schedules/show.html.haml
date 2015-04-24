@@ -3,9 +3,10 @@
 .row
   - (1..5).each do |day_num|
     .col-md-2
+      = day_name(day_num)
       %ul
         - @schedule[day_num].each do |term|
           %li
             = link_to term do
-              %p= term.subject.name
+              %p{ style: "background: ##{term.subject.color};" }= term.subject.name
 

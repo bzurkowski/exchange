@@ -1,6 +1,8 @@
 pl:
   access_denied: Nie masz odpowiednich uprawnień
   basic_view: Widok podstawowy
+  date:
+    day_names: ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
   common:
     confirm: Czy jesteś pewien?
   layout:
