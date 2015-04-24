@@ -1,12 +1,16 @@
 %h2= t(".your_schedule")
 
-.row
+.row.schedule
   - (1..5).each do |day_num|
     .col-md-2
-      = day_name(day_num)
-      %ul
-        - @schedule[day_num].each do |term|
-          %li
-            = link_to term do
-              %p{ style: "background: ##{term.subject.color};" }= term.subject.name
+      %h4= day_name(day_num)
 
+      %ul.terms
+        - @schedule[day_num].each do |term|
+          %li{ style: "top: #{term_position term}px; background: ##{term.subject.color};" }
+            = link_to term do
+              %dl
+                %dt= term.subject.name
+                %dd
+                  = term_time_range term
+                  = term.instructor.name
