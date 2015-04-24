@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423212250) do
+ActiveRecord::Schema.define(version: 20150423223836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,11 +41,29 @@ ActiveRecord::Schema.define(version: 20150423212250) do
   add_index "assignations", ["schedule_id"], name: "index_assignations_on_schedule_id", using: :btree
   add_index "assignations", ["term_id"], name: "index_assignations_on_term_id", using: :btree
 
+  create_table "demands", force: :cascade do |t|
+    t.integer "offer_id"
+    t.integer "term_id"
+  end
+
+  add_index "demands", ["offer_id"], name: "index_demands_on_offer_id", using: :btree
+  add_index "demands", ["term_id"], name: "index_demands_on_term_id", using: :btree
+
   create_table "instructors", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer  "assignation_id"
+    t.integer  "status",         default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "offers", ["assignation_id"], name: "index_offers_on_assignation_id", using: :btree
+  add_index "offers", ["status"], name: "index_offers_on_status", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -108,6 +126,9 @@ ActiveRecord::Schema.define(version: 20150423212250) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "demands", "offers"
+  add_foreign_key "demands", "terms"
+  add_foreign_key "offers", "assignations"
   add_foreign_key "schedules", "users"
   add_foreign_key "user_roles", "users"
 end

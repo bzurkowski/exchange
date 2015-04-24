@@ -94,6 +94,12 @@ pl:
       term:
         one: Termin zajęć
         other: Terminy zajęć
+      offer:
+        one: Oferta
+        other: Oferty
+      demand:
+        one: Żądanie
+        other: Żądania
     attributes:
       common_attributes: &common_attributes
         id: ID
@@ -130,3 +136,12 @@ pl:
         <<: *common_attributes
         terms: Zajęcia
         user: Właściciel
+      offer:
+        <<: *common_attributes
+        assignation: Obecny termin
+        status: Stan
+        term: Termin zajęć
+        user: Obecny właściciel
+        demands: Żądania
+      demand:
+        term: Termin

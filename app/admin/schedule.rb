@@ -35,7 +35,7 @@ ActiveAdmin.register Schedule do
     f.semantic_errors
     f.inputs do
       f.input :user
-      f.input :terms, label_method: ->(term) { binding.pry; term.decorate.display_name }
+      f.input :terms
     end
     f.actions
   end
