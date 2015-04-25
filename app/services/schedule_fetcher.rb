@@ -12,7 +12,10 @@ class ScheduleFetcher
   end
 
   def fetch_day(day_num)
-    schedule ? schedule.terms.select { |term| term.starts_at.wday == day_num } : []
+    return [] unless schedule
+
+    terms = schedule.terms.select { |term| term.starts_at.wday == day_num }
+    terms.map(&:decorate)
   end
 
   private
