@@ -1,6 +1,5 @@
-.term{ style: "top: #{term.position}px; background: ##{term.color};" }
-  = link_to term do
-    %p= term.subject_name
-    %p= term.time_range
-    %p= term.instructor_name
-
+.term{ style: "top: #{term.position}px; height: #{term.height}px; background: ##{term.color};" }
+  %dl
+    %dt= link_to term.subject_name, term
+    %dd= term.time_range
+    %dd= term.instructor_name

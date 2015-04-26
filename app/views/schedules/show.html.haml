@@ -1,9 +1,13 @@
 %h2= t(".your_schedule")
 
 .schedule.row
+  .col-md-2
+
   - (1..5).each do |day_num|
     .schedule-day.col-md-2.no-padding
       %h4= day_name(day_num)
 
       .schedule-terms
+        = render 'time_scale'
+
         = render partial: "term", collection: @schedule[day_num]
