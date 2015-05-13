@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424083322) do
+ActiveRecord::Schema.define(version: 20150514201522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,26 @@ ActiveRecord::Schema.define(version: 20150424083322) do
 
   add_index "offers", ["assignation_id"], name: "index_offers_on_assignation_id", using: :btree
   add_index "offers", ["status"], name: "index_offers_on_status", using: :btree
+
+  create_table "proposed_exchange_demands", force: :cascade do |t|
+    t.integer "proposed_exchange_id",             null: false
+    t.integer "demand_id",                        null: false
+    t.integer "status",               default: 0, null: false
+  end
+
+  add_index "proposed_exchange_demands", ["demand_id"], name: "index_proposed_exchange_demands_on_demand_id", using: :btree
+  add_index "proposed_exchange_demands", ["proposed_exchange_id"], name: "index_proposed_exchange_demands_on_proposed_exchange_id", using: :btree
+  add_index "proposed_exchange_demands", ["status"], name: "index_proposed_exchange_demands_on_status", using: :btree
+
+  create_table "proposed_exchanges", force: :cascade do |t|
+    t.integer  "subject_id",             null: false
+    t.integer  "demands_hash", limit: 8, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "proposed_exchanges", ["demands_hash"], name: "index_proposed_exchanges_on_demands_hash", using: :btree
+  add_index "proposed_exchanges", ["subject_id"], name: "index_proposed_exchanges_on_subject_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -130,6 +150,9 @@ ActiveRecord::Schema.define(version: 20150424083322) do
   add_foreign_key "demands", "offers"
   add_foreign_key "demands", "terms"
   add_foreign_key "offers", "assignations"
+  add_foreign_key "proposed_exchange_demands", "demands"
+  add_foreign_key "proposed_exchange_demands", "proposed_exchanges"
+  add_foreign_key "proposed_exchanges", "subjects"
   add_foreign_key "schedules", "users"
   add_foreign_key "user_roles", "users"
 end

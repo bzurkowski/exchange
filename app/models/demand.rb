@@ -3,4 +3,6 @@ class Demand < ActiveRecord::Base
   belongs_to :term
 
   validates :offer, :term, presence: true
+
+  scope :owned_by, ->(user) { joins(offer: { assignation: { schedule: :user } }).where(schedules: { user_id: user }) }
 end

@@ -1,4 +1,5 @@
 Fabricator(:schedule) do
+  user
 end
 
 Fabricator(:schedule_with_terms, from: :schedule) do

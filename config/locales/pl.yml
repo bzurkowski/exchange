@@ -80,6 +80,14 @@ pl:
           attributes:
             name:
               <<: *general_errors_f
+        proposed_exchange:
+          attributes:
+            subject:
+              <<: *general_errors_m
+            demands:
+              invalid_exchange: nie tworzą poprawnej wymiany
+            demands_hash:
+              taken: już istnieje
     models:
       user:
         one: Użytkownik
