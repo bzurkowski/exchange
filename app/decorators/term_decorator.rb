@@ -1,6 +1,11 @@
 class TermDecorator < Draper::Decorator
   delegate_all
 
+  TIME_UNIT   = Settings.schedule.time_unit
+  CELL_HEIGHT = Settings.schedule.cell_height
+
+  START_HOUR  = Settings.schedule.start_hour
+
   def display_name
     "#{object.subject.name}: #{starts_at} - #{ends_at}"
   end
@@ -30,21 +35,23 @@ class TermDecorator < Draper::Decorator
   end
 
   def position
-    start_time = object.starts_at
-
-    minutes = (start_time.hour - 6) * 60 + start_time.min
-
-    (minutes / 5) * 5
+    minutes_from_beginning / TIME_UNIT * CELL_HEIGHT
   end
 
   def height
-      duration_in_minutes / 5 * 5  # TODO: config for cell height & time unit
+    duration_in_minutes / TIME_UNIT * CELL_HEIGHT
   end
 
   private
 
   def duration_in_minutes
-      duration = (object.ends_at - object.starts_at) / 1.minute
-      duration.round
+    duration = (object.ends_at - object.starts_at) / 1.minute
+    duration.round
+  end
+
+  def minutes_from_beginning
+    start_time = object.starts_at
+
+    (start_time.hour - START_HOUR) * 60 + start_time.min
   end
 end

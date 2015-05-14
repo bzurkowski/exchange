@@ -21,6 +21,7 @@ gem "activeadmin", "~> 1.0.0.pre1"
 gem "mailgunner"
 gem "devise"
 gem "draper"
+gem "rails_config"
 
 group :doc do
   gem "sdoc", "~> 0.4.0", require: false
