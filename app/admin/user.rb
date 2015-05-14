@@ -21,8 +21,8 @@ ActiveAdmin.register User do
       row :confirmed_at
     end
 
-    panel User.human_attribute_name(:groups) do
-      table_for user.groups do
+    panel User.human_attribute_name(:roles) do
+      table_for user.roles do
         column :id
         column :name
       end
@@ -44,7 +44,7 @@ ActiveAdmin.register User do
       f.input :username
       f.input :student_number
       f.input :email
-      f.input :groups
+      f.input :roles
     end
     f.actions
   end
