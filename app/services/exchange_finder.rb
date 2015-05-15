@@ -35,7 +35,7 @@ class ExchangeFinder
     end
 
     stack.pop
-    false
+    [false, stack]
   end
 
   def find_cycles
