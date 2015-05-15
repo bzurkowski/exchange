@@ -21,8 +21,31 @@
 @import "font-awesome-sprockets"
 @import "font-awesome"
 
-html
-  font-size: 18px
+html, body
+  height: 100%
+
+.page-wrap
+  min-height: 100%
+  margin-bottom: -100px
+
+.page-wrap:after
+  content: ""
+  display: block
+
+footer .page-wrap:after
+  height: 100px
+
+footer
+  background: #fafafa
+  border-top: 1px solid #ddd
+  margin-top: 20px
+  padding: 10px 0px
+
+  ul
+    margin: 0px
+
+    li
+      display: inline-block
 
 body
   font-size: 18px
@@ -51,8 +74,9 @@ ul
   text-align: center
 
 a.navbar-brand
-  font-size: 24px
+  font-size: 32px
   font-weight: bold
+  color: #222 !important
 
 .btn-primary
   border: 1px solid #8098dc
@@ -82,18 +106,6 @@ a.navbar-brand
     span
       font-size: 100px
       color: #ddd
-
-footer
-  background: #fafafa
-  border-top: 1px solid #ddd
-  margin-top: 20px
-  padding: 10px 0px
-
-  ul
-    margin: 0px
-
-    li
-      display: inline-block
 
 #toasts-container
   position: absolute

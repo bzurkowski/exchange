@@ -1,25 +1,29 @@
-.container
-  %h2= t(".header")
+%h2.page-header= t(".header")
 
-  .filter.pull-left
-    = form_tag offers_path, method: :get, class: "form-inline" do
-      .form-group
-        = label_tag :subject_id, Subject.model_name.human
-        = select_tag :subject_id, options_from_collection_for_select(@filter.user_subjects, :id, :name, @filter.subject_id),
-          include_blank: true, class: "form-control"
-      = submit_tag t(".filter"), class: "btn btn-default"
+.row
+  .col-md-10
+    .filter
+      = form_tag offers_path, method: :get, class: "form-inline" do
+        .form-group
+          .input-group
+            = select_tag :subject_id, options_from_collection_for_select(@filter.user_subjects, :id, :name, @filter.subject_id), include_blank: true, class: "form-control"
 
-  .actions.pull-right
-    = link_to t(".new_offer"), new_offer_path, class: "btn btn-default"
+            .input-group-btn
+              = submit_tag t(".filter"), class: "btn btn-default"
+  .col-md-2
+    .actions.pull-right
+      = link_to t(".new_offer"), new_offer_path, class: "btn btn-default"
 
-  .clearfix
+    .clearfix
 
-  %table.table.table-bordered.table-striped.offers
-    %thead
-      %tr
-        %th= t(".user")
-        %th= t(".offered")
-        %th= t(".wanted")
-        %th
-    %tbody
-      = render partial: "offer", collection: @offers
+.clearfix
+
+%table.table.table-bordered.table-striped.offers
+  %thead
+    %tr
+      %th= t(".user")
+      %th= t(".offered")
+      %th= t(".wanted")
+      %th
+  %tbody
+    = render partial: "offer", collection: @offers

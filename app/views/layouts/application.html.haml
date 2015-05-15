@@ -11,7 +11,7 @@
   %body
     = render "layouts/header"
 
-    %div{ class: container_class(yield :container) }
+    %div{ class: [container_class(yield :container), "page-wrap"] }
       = yield
 
     / = render "layouts/footer"

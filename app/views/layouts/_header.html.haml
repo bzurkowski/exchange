@@ -8,12 +8,12 @@
         %span.icon-bar
 
       = link_to root_path, class: "navbar-brand" do
-        %span.fa.fa-refresh
         Exchange
 
     #navbar-links{class: "collapse navbar-collapse"}
       %ul.nav.navbar-nav
         - if current_user.present?
+          %li= link_to t("layout.menu.schedule"), schedule_path(current_user)
           %li= link_to t("layout.menu.offers"), offers_path
           %li
             = link_to proposed_exchanges_path do

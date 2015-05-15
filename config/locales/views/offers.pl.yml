@@ -1,7 +1,7 @@
 pl:
   offers:
     index:
-      header: Lista ofert
+      header: Oferty
       new_offer: Nowa oferta
       filter: Filtruj
       user: Użytkownik

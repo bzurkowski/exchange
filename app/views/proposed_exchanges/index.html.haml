@@ -1,10 +1,9 @@
-.container
-  %h2= t(".header")
+%h2.page-header= t(".header")
 
-  %table.exchanges.table.table-striped
-    %thead
-      %tr
-        %th= t(".exchanges")
-        %th
-    %tbody
-      = render partial: "exchange", collection: @exchanges
+%table.exchanges.table.table-striped
+  %thead
+    %tr
+      %th= t(".exchanges")
+      %th
+  %tbody
+    = render partial: "exchange", collection: @exchanges
