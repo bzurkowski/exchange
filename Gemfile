@@ -22,6 +22,7 @@ gem "mailgunner"
 gem "devise"
 gem "draper"
 gem "rails_config"
+gem "resque"
 
 group :doc do
   gem "sdoc", "~> 0.4.0", require: false
@@ -50,4 +51,5 @@ group :test do
   gem "shoulda-matchers"
   gem "fabrication"
   gem "faker"
+  gem "resque_spec"
 end

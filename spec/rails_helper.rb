@@ -37,6 +37,8 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.start
+
+    ResqueSpec.reset!
   end
 
   config.after(:each) do
