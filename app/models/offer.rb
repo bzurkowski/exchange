@@ -16,6 +16,6 @@ class Offer < ActiveRecord::Base
 
   def active_offer_assignation_uniqueness
     return unless assignation.present?
-    errors.add(:assignation, :taken) if Offer.where(assignation: assignation, status: 0).any?
+    errors.add(:assignation, :taken) if Offer.where.not(id: id).where(assignation: assignation, status: 0).any?
   end
 end

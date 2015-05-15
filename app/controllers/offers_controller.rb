@@ -28,7 +28,7 @@ class OffersController < ApplicationController
 
   def update
     if @offer.update(offer_params)
-      redirect_to @offer
+      redirect_to offers_path
     else
       render action: "edit"
     end
@@ -43,7 +43,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:id, :assignation_id, requested_term_ids: [])
+    params.require(:offer).permit(:assignation_id, requested_term_ids: [])
   end
 
   def set_offer

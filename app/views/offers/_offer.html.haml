@@ -7,5 +7,6 @@
         %li= demand.term.decorate.display_name
   %td
     %ul.actions
-      %Li= link_to t("offers.index.delete"), offer_path(offer.id), method: :delete
-      %Li= link_to t("offers.index.edit"), edit_offer_path(offer.id)
+      - if offer.assignation.schedule.user == current_user
+        %li= link_to t("offers.index.delete"), offer_path(offer.id), method: :delete
+        %li= link_to t("offers.index.edit"), edit_offer_path(offer.id)
