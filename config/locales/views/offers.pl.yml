@@ -6,7 +6,9 @@ pl:
       filter: Filtruj
       user: Użytkownik
       offered: Posiadany termin
-      wanted: Pożądane terminy
+      wanted: Porządane terminy
+      delete: Usuń
+      edit: Edytuj
     new:
       header: Nowa oferta
     form:

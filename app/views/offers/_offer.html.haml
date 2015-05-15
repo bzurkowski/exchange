@@ -1,0 +1,11 @@
+%tr
+  %td= offer.user.username
+  %td= offer.term.display_name
+  %td
+    %ul
+      - offer.demands.each do |demand|
+        %li= demand.term.decorate.display_name
+  %td
+    %ul.actions
+      %Li= link_to t("offers.index.delete"), offer_path(offer.id), method: :delete
+      %Li= link_to t("offers.index.edit"), edit_offer_path(offer.id)
