@@ -1,0 +1,13 @@
+pl:
+  offers:
+    index:
+      header: Lista ofert
+      new_offer: Nowa oferta
+      filter: Filtruj
+      user: Użytkownik
+      offered: Posiadany termin
+      wanted: Pożądane terminy
+    new:
+      header: Nowa oferta
+    form:
+      submit: Wyślij

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :schedules, only: :show
 
   resources :terms, only: :show
+
+  resources :offers
 end

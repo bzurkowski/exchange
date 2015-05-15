@@ -1,0 +1,7 @@
+= simple_form_for offer do |f|
+  = f.association :assignation, collection: Assignation.joins(schedule: :user).where(schedules: { user_id: current_user }),
+    label_method: ->(assignation) { assignation.term.decorate.display_name }
+  = f.association :requested_terms, label_method: ->(term) { term.decorate.display_name }
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, t(".submit")
