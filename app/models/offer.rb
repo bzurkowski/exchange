@@ -12,7 +12,13 @@ class Offer < ActiveRecord::Base
 
   scope :by_subject, ->(subject) { joins(assignation: :term).where(terms: { subject_id: subject }) }
 
+  after_save :update_proposed_exchanges
+
   private
+
+  def update_proposed_exchanges
+    Resque.enqueue ExchangesUpdateJob, assignation.term.subject_id
+  end
 
   def active_offer_assignation_uniqueness
     return unless assignation.present?

@@ -14,7 +14,7 @@ class ExchangeUpdater
 
   def remove_invalid_exchanges
     # TODO: maybe something less drastic
-    ProposedExchange.where.not(demands_hash: exchanges.map(&:demands_hash)).delete_all
+    ProposedExchange.where.not(demands_hash: exchanges.map(&:demands_hash)).destroy_all
   end
 
   def add_new_exchanges
@@ -29,10 +29,10 @@ class ExchangeUpdater
   end
 
   def finder
-    @finder ||= ExchangeFinder.new(subject_graph)
+    @finder ||= ExchangeFinder.new(graph: subject_graph)
   end
 
   def subject_graph
-    @subject_graph ||= SubjectGraphBuilder.build(subject)
+    @subject_graph ||= SubjectGraphBuilder.build(subject: subject)
   end
 end
