@@ -1,0 +1,16 @@
+pl:
+  proposed_exchanges:
+    index:
+      header: Wymiany
+      offered: Termin posiadany
+      wanted: Termin porządany
+      exchange_in_progress: "Przetwarzanie wymiany..."
+    exchange:
+      accept: "Akceptuj"
+      reject: "Odrzuć"
+      acceptance_confirmation: "Czy na pewno akceptujesz tę wymianę?"
+      rejection_confirmation: "Czy na pewno chcesz odrzucić tę wymianę?"
+      processing: "Przetwarzanie..."
+    show:
+    accept:
+    reject:

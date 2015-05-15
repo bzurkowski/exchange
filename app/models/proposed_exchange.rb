@@ -17,6 +17,8 @@ class ProposedExchange < ActiveRecord::Base
     raise "No demands owned by this user" if proposed_user_demands.empty?
 
     proposed_user_demands.update_all status: ProposedExchangeDemand.statuses[:accepted]
+
+    Resque.enqueue ExchangeMakerJob, id
   end
 
   def accepted?

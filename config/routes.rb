@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   resources :terms, only: :show
 
   resources :offers
+
+  resources :proposed_exchanges, only: [:index, :show] do
+    member do
+      get :accept
+      get :reject
+    end
+  end
 end

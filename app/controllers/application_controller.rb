@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :count_exchanges
 
   protected
 
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     offers_path
+  end
+
+  def count_exchanges
+    @exchanges_count = ProposedExchange.only_involved_with(current_user).count
   end
 end

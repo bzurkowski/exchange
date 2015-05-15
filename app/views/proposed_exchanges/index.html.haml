@@ -1,0 +1,10 @@
+.container
+  %h2= t(".header")
+
+  %table.exchanges.table.table-striped
+    %thead
+      %tr
+        %th= t(".exchanges")
+        %th
+    %tbody
+      = render partial: "exchange", collection: @exchanges

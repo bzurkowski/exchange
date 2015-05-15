@@ -11,6 +11,9 @@ pl:
       sign_up: "Rejestracja"
       sign_out: "Wyloguj"
       admin_panel: "Panel admina"
+    menu:
+      offers: "Oferty"
+      exchanges: "Wymiany"
     footer:
       contact_us: "Kontakt"
   home:
