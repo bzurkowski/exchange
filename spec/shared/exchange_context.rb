@@ -13,9 +13,9 @@ shared_context "simple offer context" do
     terms.map { |term| Fabricate(:assignation, term: term) }
   end
 
-  let(:a_bd_offer) { Fabricate(:offer, assignation: assignations[0], wanted_terms: [terms[1], terms[3]]) }
-  let(:b_cd_offer) { Fabricate(:offer, assignation: assignations[1], wanted_terms: [terms[2], terms[3]]) }
-  let(:c_a_offer)  { Fabricate(:offer, assignation: assignations[2], wanted_terms: [terms[0]]) }
+  let(:a_bd_offer) { Fabricate(:offer, assignation: assignations[0], requested_terms: [terms[1], terms[3]]) }
+  let(:b_cd_offer) { Fabricate(:offer, assignation: assignations[1], requested_terms: [terms[2], terms[3]]) }
+  let(:c_a_offer)  { Fabricate(:offer, assignation: assignations[2], requested_terms: [terms[0]]) }
 
   let(:valid_proposed_exchange) do
     proposed_exchange = ProposedExchange.new subject: test_subject

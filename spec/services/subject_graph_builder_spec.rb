@@ -12,7 +12,7 @@ describe SubjectGraphBuilder do
     assignations = Fabricate.times(3, :assignation, term: other_terms.sample)
     assignations.each do |assignation|
       available_terms = other_terms - [assignation.term]
-      Fabricate(:offer, assignation: assignation, wanted_terms: available_terms)
+      Fabricate(:offer, assignation: assignation, requested_terms: available_terms)
     end
   end
 
@@ -28,9 +28,9 @@ describe SubjectGraphBuilder do
 
   context "when there are two complimentary offers" do
     let!(:first_assignation) { Fabricate(:assignation, term: terms[0]) }
-    let!(:first_offer) { Fabricate(:offer, assignation: first_assignation, wanted_terms: [terms[1]]) }
+    let!(:first_offer) { Fabricate(:offer, assignation: first_assignation, requested_terms: [terms[1]]) }
     let!(:second_assignation) { Fabricate(:assignation, term: terms[1]) }
-    let!(:second_offer) { Fabricate(:offer, assignation: second_assignation, wanted_terms: [terms[0]]) }
+    let!(:second_offer) { Fabricate(:offer, assignation: second_assignation, requested_terms: [terms[0]]) }
 
     it "finds two opposite edges" do
       expect(subject.edges).to match_array [

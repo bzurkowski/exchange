@@ -88,6 +88,12 @@ pl:
               invalid_exchange: nie tworzą poprawnej wymiany
             demands_hash:
               taken: już istnieje
+        offer:
+          attributes:
+            assignation:
+              <<: *general_errors_m
+            requested_terms:
+              blank: nie mogą być puste
     models:
       user:
         one: Użytkownik
