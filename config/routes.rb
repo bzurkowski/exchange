@@ -1,4 +1,8 @@
+require "resque/server"
+
 Rails.application.routes.draw do
+  mount Resque::Server.new, :at => "/resque"
+
   ActiveAdmin.routes(self)
   root 'home#home'
   devise_for :users
