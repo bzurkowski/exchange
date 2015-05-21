@@ -25,28 +25,34 @@ class ExchangeFinder
     graph.neighbouring_vertices_of(current_vertice).each do |neighbour|
       if neighbour[:tail] == starting_vertice
         stack[0][:demand] = neighbour[:demand]
-        return [true, stack]
+        yield [true, stack]
       end
 
-      unless visited[neighbour]
-        result, stack = dfd_find_cycle(graph, starting_vertice, neighbour[:tail], neighbour[:demand], stack, visited)
-        return [true, stack] if result
+      unless visited[neighbour[:tail]]
+        dfd_find_cycle(graph, starting_vertice, neighbour[:tail], neighbour[:demand], stack, visited) do |result, stack|
+          yield [true, stack] if result
+        end
       end
     end
 
+    visited[current_vertice] = false
     stack.pop
     [false, stack]
   end
 
   def find_cycles
-    used_vertices = []
+    graph_copy = graph.clone
 
-    graph.vertices.each do |vertice|
+    while graph_copy.vertices.any?
+      vertice = graph_copy.vertices[0]
       visited = Hash.new(false)
-      result, stack = dfd_find_cycle(graph, vertice, vertice, nil, [], Hash.new(false))
 
-      yield stack if result and stack.select { |pair| used_vertices.include? pair[:term] }.none?
-      used_vertices.push vertice
+      dfd_find_cycle(graph, vertice, vertice, nil, [], Hash.new(false)) do |result, stack|
+        yield stack if result
+      end
+
+      graph_copy.vertices.delete vertice
+      graph_copy.edges.delete_if { |edge| [edge[:head], edge[:tail]].include? vertice }
     end
   end
 end

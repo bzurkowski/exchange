@@ -61,8 +61,4 @@ describe ProposedExchange do
   describe "#accept?", pending: true do
     # TODO: #accept? spec
   end
-
-  def demand_for_term(offer:, term:)
-    offer.demands.select { |demand| demand.term == term }.first
-  end
 end
