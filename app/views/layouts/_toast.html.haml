@@ -4,4 +4,5 @@
       = message
 
 :coffee
-  $("#toasts-container").delay(1000).animate { opacity: 0 }, 700
+  $('#toasts-container').delay(1000).animate { opacity: 0 }, 700, ->
+    $(this).hide()
