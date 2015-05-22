@@ -9,6 +9,7 @@ pl:
       wanted: Porządane terminy
       delete: Usuń
       edit: Edytuj
+      all: Wszystkie
     new:
       header: Nowa oferta
     form:

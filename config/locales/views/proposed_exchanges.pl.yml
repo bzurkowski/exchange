@@ -5,6 +5,7 @@ pl:
       offered: Termin posiadany
       wanted: Termin porządany
       exchange_in_progress: "Przetwarzanie wymiany..."
+      exchanges: "Wymiany"
     exchange:
       accept: "Akceptuj"
       reject: "Odrzuć"

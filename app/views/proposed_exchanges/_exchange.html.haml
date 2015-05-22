@@ -5,9 +5,8 @@
         = render partial: "demand", collection: exchange.demands.owned_by(current_user)
   %td
     - unless exchange.accepted_by_user?(current_user)
-      .button-group
-        = link_to t(".accept"), accept_proposed_exchange_path(exchange.id), class: "btn btn-success", data: {  confirm: t(".acceptance_confirmation"), disable_with: t(".processing") }
-        = link_to t(".reject"), reject_proposed_exchange_path(exchange.id), class: "btn btn-danger", data: {  confirm: t(".rejection_confirmation"), disable_with: t(".processing") }
+      %ul.button-group.action-buttons
+        %li= link_to t(".accept"), accept_proposed_exchange_path(exchange.id), class: "btn btn-success", data: {  confirm: t(".acceptance_confirmation"), disable_with: t(".processing") }
+        %li= link_to t(".reject"), reject_proposed_exchange_path(exchange.id), class: "btn btn-danger", data: {  confirm: t(".rejection_confirmation"), disable_with: t(".processing") }
     - else
       = t(".exchange_in_progress")
-

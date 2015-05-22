@@ -7,6 +7,6 @@
         %li= demand.term.decorate.display_name
   %td
     - if offer.assignation.schedule.user == current_user
-      .button-group
-        = link_to t("offers.index.delete"), offer_path(offer.id), method: :delete, class: "btn btn-danger"
-        = link_to t("offers.index.edit"), edit_offer_path(offer.id), class: "btn btn-info"
+      %ul.button-group.action-buttons
+        %li= link_to t("offers.index.delete"), offer_path(offer.id), method: :delete, class: "btn btn-danger"
+        %li= link_to t("offers.index.edit"), edit_offer_path(offer.id), class: "btn btn-info"

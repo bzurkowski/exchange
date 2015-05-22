@@ -6,7 +6,7 @@
       = form_tag offers_path, method: :get, class: "form-inline" do
         .form-group
           .input-group
-            = select_tag :subject_id, options_from_collection_for_select(@filter.user_subjects, :id, :name, @filter.subject_id), include_blank: true, class: "form-control"
+            = select_tag :subject_id, options_from_collection_for_select(@filter.user_subjects, :id, :name, @filter.subject_id), include_blank: t(".all"), class: "form-control"
 
             .input-group-btn
               = submit_tag t(".filter"), class: "btn btn-default"
@@ -18,7 +18,7 @@
 
 .clearfix
 
-%table.table.table-bordered.table-striped.offers
+%table.table.table-striped.offers
   %thead
     %tr
       %th= t(".user")
