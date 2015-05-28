@@ -28,7 +28,7 @@ pl:
       reset_password_instructions:
         subject: "Instrukcja zresetowania hasła."
         welcome: "Witaj %{email}!"
-        change_requested: "Ktoś zarządał zmiany hasła do konta przypisanego do tego adresu email. Możesz zrobić to korzystając z poniższego linku."
+        change_requested: "Ktoś zażądał zmiany hasła do konta przypisanego do tego adresu email. Możesz zrobić to korzystając z poniższego linku."
         change_label: "Zmień moje hasło"
         warning1: "Jeśli to nie Ty prosiłeś o zmianę hasła, zignoruj tę wiadomość."
         warning2: "Twoje hasło nie zmieni się dopóki nie klikniesz na powyższy link i nie wpiszesz nowego."

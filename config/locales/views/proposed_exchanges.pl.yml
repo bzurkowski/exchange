@@ -3,7 +3,7 @@ pl:
     index:
       header: Wymiany
       offered: Termin posiadany
-      wanted: Termin porządany
+      wanted: Termin pożądany
       exchange_in_progress: "Przetwarzanie wymiany..."
       exchanges: "Wymiany"
     exchange:
