@@ -9,7 +9,7 @@ class SubjectGraphBuilder
   end
 
   def self.build(subject:)
-    vertices = subject.terms
+    vertices = subject.terms.to_a
     offers   = Offer.active.joins(:assignation).where(assignations: { term_id: vertices }).includes(assignation: [:term])
     edges    = offers.map { |offer| generate_edges_for_offer(offer) }.flatten
 
