@@ -32,6 +32,11 @@ group :development do
   gem "guard-rspec"
   gem "guard-livereload"
   gem "letter_opener"
+
+  gem "capistrano-rails"
+  gem "capistrano-bundler"
+  gem "capistrano3-puma"
+  gem "capistrano-rbenv"
 end
 
 group :development, :test do
