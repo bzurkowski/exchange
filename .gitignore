@@ -14,3 +14,4 @@
 
 # Ignore database config file
 /config/database.yml
+/config/environment.yml
