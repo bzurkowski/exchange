@@ -1,9 +1,22 @@
 = simple_form_for offer do |f|
-  = f.association :assignation, collection: Assignation.joins(schedule: :user).where(schedules: { user_id: current_user }),
-    label_method: ->(assignation) { assignation.term.decorate.display_name }
+  = f.input :assignation do
+    = f.select :assignation_id, user_assignations(current_user), {}, class: "select required form-control"
 
-  = f.association :requested_terms, label_method: ->(term) { term.decorate.display_name }
+  = f.input :requested_terms do
+    = f.select :requested_term_ids, available_terms(current_user), {}, multiple: true, class: "select required form-control"
 
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.button :submit, t(".submit")
+
+:coffee
+  $(document).ready ->
+    assignation_select = $("#offer_assignation_id")
+    filter_results = ->
+      selected = assignation_select.find(":selected").attr "subject_id"
+      term_select = $("#offer_requested_term_ids")
+      term_select.find("option[subject_id='" + selected + "']").show()
+      term_select.find("option").not("[subject_id='" + selected + "']").prop("selected", false).hide()
+
+    assignation_select.change filter_results
+    filter_results()
