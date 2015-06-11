@@ -10,3 +10,5 @@
         %li= link_to t(".reject"), reject_proposed_exchange_path(exchange.id), class: "btn btn-danger", data: {  confirm: t(".rejection_confirmation"), disable_with: t(".processing") }
     - else
       = t(".exchange_in_progress")
+    %p
+      %em.small= t(".accepted_count", n: exchange.accepted_count, of: exchange.needed_acceptances_count)

@@ -12,6 +12,7 @@ pl:
       acceptance_confirmation: "Czy na pewno akceptujesz tę wymianę?"
       rejection_confirmation: "Czy na pewno chcesz odrzucić tę wymianę?"
       processing: "Przetwarzanie..."
+      accepted_count: "%{n}/%{of} zaakceptowało"
     show:
     accept:
     reject:

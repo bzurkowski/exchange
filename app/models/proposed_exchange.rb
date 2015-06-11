@@ -29,6 +29,14 @@ class ProposedExchange < ActiveRecord::Base
     self.demands_hash = demand_ids.sort.hash
   end
 
+  def accepted_count
+    proposed_exchange_demands.accepted.count
+  end
+
+  def needed_acceptances_count
+    proposed_exchange_demands.count
+  end
+
   private
 
   def all_demands_are_for_proper_subject
