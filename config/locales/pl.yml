@@ -20,15 +20,13 @@ pl:
   home:
     home:
       jumbotron_header: "Podbij giełdę terminów!"
-      jumbotron_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      jumbotron_description: "Znajdź swój idealny plan bez żadnego wysiłku. Wybierz terminy którymi jesteś zainteresowany, a system zadba, by Twój plan wyglądał dokładnie tak, jak tego chcesz."
       header_more: "Czytaj więcej"
       easy_steps: "Zaledwie cztery proste kroki dzielą Cię od wymiany"
       find_and_declare: "Znajdź i zadeklaruj terminy"
       communicate: "Negocjuj oferty z innymi"
       co_create: "Akceptuj wymiany"
       system_care: "Nasz system zadba o Twój plan zajęć"
-      content_header: "Lorem ipsum dolor sit amet"
-      content: "Nulla rutrum imperdiet nulla at imperdiet. Quisque bibendum sollicitudin lorem, ac rutrum neque laoreet eu. Curabitur ante urna, euismod sed velit facilisis, vestibulum semper ligula. Fusce varius nisi vel mi dignissim blandit. Nullam ornare diam massa, at ullamcorper velit dictum vitae. Quisque euismod mauris eu laoreet laoreet. Suspendisse varius mauris non rutrum pretium. Donec posuere urna vel ante congue porttitor. Praesent ultricies diam sed diam lobortis fermentum."
   schedules:
     show:
       your_schedule: "Twój plan zajęć"
