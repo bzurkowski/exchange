@@ -9,7 +9,7 @@ module OfferHelper
     terms = Term.joins(assignations: :schedule)
       .where(subject_id: user_subjects)
       .where.not(schedules: { user_id: user.id })
-      .includes(:subject)
+      .includes(:subject).uniq
     terms.decorate
 
     terms.map { |term| [term.display_name, term.id, { subject_id: term.subject_id }]}
